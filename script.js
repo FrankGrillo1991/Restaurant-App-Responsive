@@ -61,3 +61,25 @@ function showReview(index) {
     currentReview = index;
 }
 
+function nextReview() {
+    currentReview = (currentReview + 1) % reviewDots.length;
+    showReview(currentReview);
+}
+
+function startCarousel() {
+    intervalId = setInterval(nextReview, 5000);
+}
+
+function stopCarousel() {
+    clearInterval(intervalId);
+}
+
+reviewDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        showReview(index);
+        stopCarousel();
+        startCarousel();
+    });
+});
+
+startCarousel();
