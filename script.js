@@ -51,3 +51,13 @@ navLinks.forEach(link => {
         }
     });
 });
+
+function showReview(index) {
+    reviewCarousel.style.transform = `translateY(-${index * 100}%)`;
+    reviewDots.forEach((dot, i) => {
+        dot.classList.toggle('bg-red-500', i === index);
+        dot.classList.toggle('bg-gray-300', i !== index);
+    });
+    currentReview = index;
+}
+
