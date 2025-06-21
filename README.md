@@ -1,0 +1,1 @@
+Responsive Restaurant App developed with HTML, CSS & JavaScript
